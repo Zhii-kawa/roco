@@ -3,79 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>提交订单 - 洛克王国代肝</title>
+<title>立即点单</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",sans-serif}
-:root{--primary:#2563eb;--light:#f8fafc;--gray:#64748b}
-body{background:#f1f5f9;color:#1e293b}
-.header{background:var(--primary);color:white;padding:24px 0;text-align:center}
-.header h1{font-size:28px}
-.nav{background:white;box-shadow:0 2px 6px #0002}
-.nav ul{display:flex;justify-content:center;list-style:none}
-.nav a{display:block;padding:16px 24px;text-decoration:none;color:#333;font-weight:500}
-.nav a:hover{color:var(--primary)}
-.container{max-width:600px;margin:30px auto;padding:0 20px}
-.form-card{background:white;border-radius:12px;padding:28px;box-shadow:0 2px 8px #0002}
-label{display:block;margin:16px 0 6px;font-weight:500}
-input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
-textarea{min-height:120px;resize:vertical}
-.btn{background:var(--primary);color:white;border:none;padding:14px;width:100%;border-radius:8px;font-size:16px;margin-top:20px;cursor:pointer}
-.btn:hover{opacity:0.9}
-.tip{color:var(--gray);font-size:14px;margin-top:12px}
-.footer{text-align:center;padding:20px;color:var(--gray);font-size:14px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f7fa;
+}
+.container {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 24px 20px 80px;
+}
+.header h1 {
+  font-size: 28px;
+  color: #4299e1;
+  margin-bottom: 20px;
+}
+/* 表单样式 */
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.back-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+.back-btn a {
+  color: #4299e1;
+  text-decoration: none;
+}
+/* 底部导航栏 */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  color: #666;
+}
+.tab-item .icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 4px;
+}
 </style>
 </head>
 <body>
-<div class="header"><h1>提交订单</h1></div>
-<div class="nav">
-  <ul>
-    <li><a href="index.html">首页</a></li>
-    <li><a href="service.html">服务项目</a></li>
-    <li><a href="order.html">提交订单</a></li>
-    <li><a href="about.html">关于我们</a></li>
-  </ul>
-</div>
 <div class="container">
-  <div class="form-card">
-    <form id="orderForm" action="https://formbold.com/s/9gD2O" method="POST">
-      <!-- 下面字段和FormBold表单字段要完全一致 -->
-      <label>游戏账号（QQ）</label>
-      <input type="text" name="qq" id="qq" required placeholder="请输入QQ号">
+  <div class="header">
+    <h1>立即点单</h1>
+  </div>
 
-      <label>游戏密码</label>
-      <input type="password" name="pwd" id="pwd" required placeholder="请输入密码（仅用于代肝）">
-
-      <label>服务类型</label>
-      <select name="type" id="type" required>
-        <option value="">请选择服务</option>
-        <option value="等级代练">等级代练</option>
-        <option value="稀有宠物捕捉">稀有宠物捕捉</option>
-        <option value="材料代肝">材料代肝</option>
-        <option value="活动/副本通关">活动/副本通关</option>
+  <form action="https://formbold.com/s/你的表单地址" method="POST">
+    <div class="form-group">
+      <label>你的昵称</label>
+      <input type="text" name="nickname" required>
+    </div>
+    <div class="form-group">
+      <label>联系QQ</label>
+      <input type="text" name="qq" required>
+    </div>
+    <div class="form-group">
+      <label>选择服务</label>
+      <select name="service" required>
+        <option value="">请选择</option>
+        <option value="play">陪玩服务</option>
+        <option value="voice">语音点单</option>
       </select>
+    </div>
+    <div class="form-group">
+      <label>备注说明</label>
+      <textarea name="note" rows="3"></textarea>
+    </div>
+    <button class="submit-btn" type="submit">提交订单</button>
+  </form>
 
-      <label>详细需求/备注</label>
-      <textarea name="note" placeholder="例如：宠物名称、等级要求、性格要求、截止时间等"></textarea>
-
-      <label>联系微信（方便对接）</label>
-      <input type="text" name="wx" placeholder="请输入微信号">
-
-      <button type="submit" class="btn">提交订单</button>
-    </form>
-    <p class="tip">提交后我们会尽快联系你，订单信息将加密保存，仅用于代肝服务</p>
+  <div class="back-btn">
+    <a href="index.html">← 返回首页</a>
   </div>
 </div>
-<div class="footer">© 2026 洛克王国代肝服务</div>
 
-<script>
-// 从URL自动填充服务类型
-window.onload=function(){
-  let url=new URL(window.location.href);
-  let type=url.searchParams.get("type");
-  if(type){
-    document.getElementById("type").value=type;
-  }
-}
-</script>
+<div class="tabbar">
+  <div class="tab-item" onclick="location.href='index.html'">
+    <span class="icon">🏠</span>
+    首页
+  </div>
+  <div class="tab-item" onclick="location.href='service.html'">
+    <span class="icon">▦</span>
+    分类
+  </div>
+  <div class="tab-item">
+    <span class="icon">👤</span>
+    关于我们
+  </div>
+</div>
 </body>
 </html>
