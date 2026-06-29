@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>页面不存在</title>
-<style>
-body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#f1f5f9;font-family:"Microsoft YaHei",sans-serif}
-h1{font-size:48px;color:#2563eb;margin-bottom:16px}
-p{color:#64748b;margin-bottom:24px}
-a{background:#2563eb;color:white;padding:12px 20px;border-radius:8px;text-decoration:none}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面不存在 - 洛克王国代肝</title>
+  <link rel="stylesheet" href="common.css"> <!-- 引入公共样式 -->
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 1rem;
+    }
+    .error-container h1 {
+      font-size: clamp(5rem, 15vw, 8rem);
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .error-container p {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: var(--gray);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+  </style>
 </head>
 <body>
-<h1>404</h1>
-<p>抱歉，你访问的页面不存在</p>
-<a href="index.html">返回首页</a>
+  <div class="error-container">
+    <h1>404</h1>
+    <p>抱歉，你访问的页面不存在或已被删除</p>
+    <a href="index.html" class="btn">返回首页</a>
+  </div>
+
+  <div class="footer">
+    © 2026 洛克王国代肝服务 - 所有权利保留
+    <!-- 需修改：年份/版权信息可根据实际调整 -->
+  </div>
 </body>
 </html>

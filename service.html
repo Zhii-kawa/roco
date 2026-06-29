@@ -1,123 +1,103 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>服务分类</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f5f7fa;
-}
-.container {
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: #fff;
-  min-height: 100vh;
-  padding: 24px 20px 80px;
-}
-.header h1 {
-  font-size: 28px;
-  color: #4299e1;
-  margin-bottom: 20px;
-}
-/* 服务列表 */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
-}
-.service-card {
-  background-color: #f5f7fa;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-}
-.service-card h3 {
-  font-size: 16px;
-  color: #333;
-  margin-top: 10px;
-}
-/* 返回按钮 */
-.back-btn {
-  margin-top: 30px;
-  text-align: center;
-}
-.back-btn a {
-  color: #4299e1;
-  text-decoration: none;
-}
-/* 底部导航栏 */
-.tabbar {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-}
-.tab-item {
-  flex: 1;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 14px;
-  color: #666;
-}
-.tab-item .icon {
-  font-size: 24px;
-  display: block;
-  margin-bottom: 4px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服务项目 - 洛克王国代肝</title>
+  <link rel="stylesheet" href="common.css"> <!-- 引入公共样式 -->
+  <style>
+    /* 服务项专属样式 */
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* 小屏自动换行 */
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+    .service-item .info {
+      flex: 1;
+      min-width: 250px; /* 小屏最小宽度 */
+    }
+    .service-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .service-item p {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .service-item .btn {
+      white-space: nowrap; /* 按钮文字不换行 */
+    }
+  </style>
 </head>
 <body>
-<div class="container">
   <div class="header">
-    <h1>服务分类</h1>
+    <h1>服务项目</h1>
+    <p>全品类洛克王国代肝服务，满足你的所有需求</p>
   </div>
 
-  <div class="service-grid">
-    <div class="service-card">
-      <div class="icon">🎮</div>
-      <h3>陪玩服务</h3>
+  <div class="nav">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="service.html">服务项目</a></li>
+      <li><a href="order.html">提交订单</a></li>
+      <li><a href="about.html">关于我们</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <!-- 等级代练 -->
+    <div class="card service-item">
+      <div class="info">
+        <h3>等级代练</h3>
+        <p>宠物等级快速提升、1-100级满级速成、海量经验刷取、努力值优化分配</p>
+      </div>
+      <button class="btn" onclick="location.href='order.html?type=等级代练'">立即预约</button>
     </div>
-    <div class="service-card">
-      <div class="icon">🎤</div>
-      <h3>语音点单</h3>
+
+    <!-- 稀有宠物捕捉 -->
+    <div class="card service-item">
+      <div class="info">
+        <h3>稀有宠物捕捉</h3>
+        <p>绝版/限定稀有宠物捕捉、极品性格筛选、天赋优化、努力值精准调配</p>
+      </div>
+      <button class="btn" onclick="location.href='order.html?type=稀有宠物捕捉'">立即预约</button>
     </div>
-    <div class="service-card">
-      <div class="icon">🎨</div>
-      <h3>定制服务</h3>
+
+    <!-- 材料代肝 -->
+    <div class="card service-item">
+      <div class="info">
+        <h3>材料代肝</h3>
+        <p>金币刷取、经验果/努力果收集、各类矿石/道具获取、活动限定材料代刷</p>
+      </div>
+      <button class="btn" onclick="location.href='order.html?type=材料代肝'">立即预约</button>
+    </div>
+
+    <!-- 活动/副本通关 -->
+    <div class="card service-item">
+      <div class="info">
+        <h3>活动/副本通关</h3>
+        <p>限时活动全奖励获取、星辰塔通关、秘境探索、Boss挑战、系别赛代打</p>
+      </div>
+      <button class="btn" onclick="location.href='order.html?type=活动/副本通关'">立即预约</button>
+    </div>
+
+    <!-- 可新增：定制服务 -->
+    <div class="card service-item">
+      <div class="info">
+        <h3>定制化服务</h3>
+        <p>根据玩家专属需求定制服务（如账号托管、日常任务代做、天梯赛冲分等）</p>
+      </div>
+      <button class="btn" onclick="location.href='order.html?type=定制化服务'">立即预约</button>
     </div>
   </div>
 
-  <div class="back-btn">
-    <a href="index.html">← 返回首页</a>
+  <div class="footer">
+    © 2026 洛克王国代肝服务 - 所有权利保留
+    <!-- 需修改：年份/版权信息可根据实际调整 -->
   </div>
-</div>
-
-<div class="tabbar">
-  <div class="tab-item" onclick="location.href='index.html'">
-    <span class="icon">🏠</span>
-    首页
-  </div>
-  <div class="tab-item active">
-    <span class="icon">▦</span>
-    分类
-  </div>
-  <div class="tab-item">
-    <span class="icon">👤</span>
-    关于我们
-  </div>
-</div>
 </body>
 </html>

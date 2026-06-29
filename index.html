@@ -1,194 +1,70 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>织音俱乐部</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f5f7fa;
-}
-/* 主容器：PC端居中，手机端全屏 */
-.container {
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: #fff;
-  min-height: 100vh;
-  padding-bottom: 80px; /* 给底部导航留空间 */
-}
-/* 顶部标题 */
-.header {
-  padding: 24px 20px;
-}
-.header h1 {
-  font-size: 28px;
-  color: #4299e1; /* 和截图一致的蓝色 */
-  font-weight: 600;
-}
-/* 功能按钮区：分类 + 点单 */
-.btn-group {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin: 20px 0;
-  gap: 16px;
-}
-.btn-card {
-  flex: 1;
-  background-color: #ccc; /* 截图里的灰色按钮 */
-  border-radius: 16px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  color: #fff;
-  font-weight: 500;
-}
-/* 蓝色装饰块 */
-.decoration {
-  background-color: #4299e1;
-  width: 80%;
-  height: 60px;
-  margin: 20px auto;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
-}
-/* 热门推荐标题 */
-.section-title {
-  text-align: center;
-  color: #666;
-  font-size: 20px;
-  margin: 30px 0;
-  position: relative;
-}
-.section-title::before,
-.section-title::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 80px;
-  height: 1px;
-  background-color: #ccc;
-}
-.section-title::before { left: calc(50% - 100px); }
-.section-title::after  { right: calc(50% - 100px); }
-/* 推荐卡片 */
-.recommend-list {
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.recommend-card {
-  border: 2px solid #e0f2fe;
-  border-radius: 16px;
-  height: 300px;
-  background-color: #fff;
-}
-.recommend-card.small {
-  height: 80px;
-}
-/* 右下角悬浮按钮 */
-.float-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 100px;
-  width: 60px;
-  height: 60px;
-  background-color: #4299e1;
-  border-radius: 50%;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-/* 底部导航栏 */
-.tabbar {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-}
-.tab-item {
-  flex: 1;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 14px;
-  color: #666;
-}
-.tab-item.active {
-  color: #4299e1;
-}
-.tab-item .icon {
-  font-size: 24px;
-  display: block;
-  margin-bottom: 4px;
-}
-/* PC端适配：让内容更居中 */
-@media (min-width: 750px) {
-  .btn-card:hover {
-    background-color: #bbb;
-    cursor: pointer;
-  }
-  .float-btn:hover {
-    background-color: #3182ce;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>洛克王国代肝服务 - 专业安全高效</title>
+  <link rel="stylesheet" href="common.css"> <!-- 引入公共样式 -->
+  <style>
+    /* 首页专属样式 */
+    .hero {
+      text-align: center;
+      padding: 2rem 0;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      color: var(--gray);
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-  <!-- 顶部标题 -->
   <div class="header">
-    <h1>织音俱乐部</h1>
+    <h1>洛克王国代肝服务平台</h1>
+    <p>纯手工·安全高效·全天在线·售后保障</p>
   </div>
 
-  <!-- 分类 + 点单按钮 -->
-  <div class="btn-group">
-    <div class="btn-card" onclick="location.href='service.html'">分类</div>
-    <div class="btn-card" onclick="location.href='order.html'">点单</div>
+  <div class="nav">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="service.html">服务项目</a></li>
+      <li><a href="order.html">提交订单</a></li>
+      <li><a href="about.html">关于我们</a></li>
+    </ul>
   </div>
 
-  <!-- 蓝色装饰块 -->
-  <div class="decoration"></div>
+  <div class="container">
+    <div class="card hero">
+      <h2>欢迎来到专业洛克王国代肝平台</h2>
+      <p>我们专注洛克王国代肝服务多年，团队成员均为资深玩家，熟悉游戏全机制。所有服务均采用纯手工操作，拒绝任何外挂，保障账号100%安全。覆盖等级代练、稀有宠物捕捉、材料代刷、活动/副本通关等全品类服务，支持定制化需求，进度实时同步，售后无忧！</p>
+      <button class="btn" onclick="location.href='service.html'">立即查看服务</button>
+    </div>
 
-  <!-- 热门推荐 -->
-  <div class="section-title">热门推荐</div>
-  <div class="recommend-list">
-    <div class="recommend-card"></div>
-    <div class="recommend-card small"></div>
+    <div class="grid">
+      <div class="card">
+        <h3>✅ 安全保障</h3>
+        <p style="margin-top: 0.5rem; color: var(--gray);">纯手工操作，无外挂/脚本，杜绝账号封禁风险</p>
+      </div>
+      <div class="card">
+        <h3>⚡ 高效快速</h3>
+        <p style="margin-top: 0.5rem; color: var(--gray);">7*24小时在线接单，按约定时间高效交付</p>
+      </div>
+      <div class="card">
+        <h3>💬 售后无忧</h3>
+        <p style="margin-top: 0.5rem; color: var(--gray);">订单进度实时沟通，问题10分钟内响应处理</p>
+      </div>
+      <div class="card">
+        <h3>🎯 定制服务</h3>
+        <p style="margin-top: 0.5rem; color: var(--gray);">支持个性化需求定制，满足不同玩家专属要求</p>
+      </div>
+    </div>
   </div>
 
-  <!-- 右下角悬浮按钮 -->
-  <button class="float-btn">💬</button>
-</div>
-
-<!-- 底部导航栏 -->
-<div class="tabbar">
-  <div class="tab-item active">
-    <span class="icon">🏠</span>
-    首页
+  <div class="footer">
+    © 2026 洛克王国代肝服务 - 所有权利保留
+    <!-- 需修改：年份/版权信息可根据实际调整 -->
   </div>
-  <div class="tab-item" onclick="location.href='service.html'">
-    <span class="icon">▦</span>
-    分类
-  </div>
-  <div class="tab-item">
-    <span class="icon">👤</span>
-    关于我们
-  </div>
-</div>
 </body>
 </html>

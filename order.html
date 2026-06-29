@@ -1,144 +1,129 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>立即点单</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f5f7fa;
-}
-.container {
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: #fff;
-  min-height: 100vh;
-  padding: 24px 20px 80px;
-}
-.header h1 {
-  font-size: 28px;
-  color: #4299e1;
-  margin-bottom: 20px;
-}
-/* 表单样式 */
-.form-group {
-  margin-bottom: 18px;
-}
-.form-group label {
-  display: block;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 8px;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  font-size: 15px;
-}
-.submit-btn {
-  width: 100%;
-  padding: 16px;
-  background-color: #4299e1;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.back-btn {
-  margin-top: 20px;
-  text-align: center;
-}
-.back-btn a {
-  color: #4299e1;
-  text-decoration: none;
-}
-/* 底部导航栏 */
-.tabbar {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-}
-.tab-item {
-  flex: 1;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 14px;
-  color: #666;
-}
-.tab-item .icon {
-  font-size: 24px;
-  display: block;
-  margin-bottom: 4px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提交订单 - 洛克王国代肝</title>
+  <link rel="stylesheet" href="common.css"> <!-- 引入公共样式 -->
+  <style>
+    /* 订单页专属样式 */
+    .form-tip {
+      color: var(--gray-light);
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+    .success-tip {
+      color: #16a34a;
+      text-align: center;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
   <div class="header">
-    <h1>立即点单</h1>
+    <h1>提交订单</h1>
+    <p>填写需求，我们将尽快与你对接</p>
   </div>
 
-  <form action="https://formbold.com/s/你的表单地址" method="POST">
-    <div class="form-group">
-      <label>你的昵称</label>
-      <input type="text" name="nickname" required>
-    </div>
-    <div class="form-group">
-      <label>联系QQ</label>
-      <input type="text" name="qq" required>
-    </div>
-    <div class="form-group">
-      <label>选择服务</label>
-      <select name="service" required>
-        <option value="">请选择</option>
-        <option value="play">陪玩服务</option>
-        <option value="voice">语音点单</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>备注说明</label>
-      <textarea name="note" rows="3"></textarea>
-    </div>
-    <button class="submit-btn" type="submit">提交订单</button>
-  </form>
+  <div class="nav">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="service.html">服务项目</a></li>
+      <li><a href="order.html">提交订单</a></li>
+      <li><a href="about.html">关于我们</a></li>
+    </ul>
+  </div>
 
-  <div class="back-btn">
-    <a href="index.html">← 返回首页</a>
-  </div>
-</div>
+  <div class="container">
+    <div class="card">
+      <form id="orderForm" action="https://formbold.com/s/你的表单ID" method="POST" onsubmit="return validateForm()">
+        <!-- 需修改：替换为自己的FormBold表单ID（https://formbold.com/ 创建表单后获取） -->
 
-<div class="tabbar">
-  <div class="tab-item" onclick="location.href='index.html'">
-    <span class="icon">🏠</span>
-    首页
+        <label for="qq">游戏账号（QQ号）*</label>
+        <input type="text" name="qq" id="qq" required placeholder="请输入你的QQ号（仅用于登录游戏）" pattern="\d{5,13}" title="QQ号为5-13位数字">
+
+        <label for="pwd">游戏密码*</label>
+        <input type="password" name="pwd" id="pwd" required placeholder="请输入游戏登录密码（加密保存，仅用于代肝）">
+        <p class="form-tip">⚠️ 我们承诺仅用于代肝服务，不会泄露或修改密码，建议使用临时密码</p>
+
+        <label for="type">服务类型*</label>
+        <select name="type" id="type" required>
+          <option value="">请选择需要的服务</option>
+          <option value="等级代练">等级代练</option>
+          <option value="稀有宠物捕捉">稀有宠物捕捉</option>
+          <option value="材料代肝">材料代肝</option>
+          <option value="活动/副本通关">活动/副本通关</option>
+          <option value="定制化服务">定制化服务</option>
+        </select>
+
+        <label for="note">详细需求/备注</label>
+        <textarea name="note" id="note" placeholder="例如：宠物名称（火神）、等级要求（1-100级）、性格要求（开朗）、截止时间（2026-01-01）等，越详细越便于我们高效完成"></textarea>
+
+        <label for="wx">联系微信*</label>
+        <input type="text" name="wx" id="wx" required placeholder="请输入微信号（方便对接订单进度）">
+
+        <label for="phone">联系电话（选填）</label>
+        <input type="text" name="phone" id="phone" placeholder="请输入手机号（选填，紧急联系用）" pattern="\d{11}" title="手机号为11位数字">
+
+        <button type="submit" class="btn" style="margin-top: 1.5rem;">提交订单</button>
+        <p class="success-tip" id="successTip">✅ 订单提交成功！我们将在10分钟内通过微信联系你，请保持畅通</p>
+      </form>
+      <p class="form-tip" style="margin-top: 1rem;">
+        * 标记为必填项，提交后订单信息将加密保存，仅用于代肝服务；<br>
+        提交成功后请主动添加客服微信（在「关于我们」页面）确认订单。
+      </p>
+    </div>
   </div>
-  <div class="tab-item" onclick="location.href='service.html'">
-    <span class="icon">▦</span>
-    分类
+
+  <div class="footer">
+    © 2026 洛克王国代肝服务 - 所有权利保留
+    <!-- 需修改：年份/版权信息可根据实际调整 -->
   </div>
-  <div class="tab-item">
-    <span class="icon">👤</span>
-    关于我们
-  </div>
-</div>
+
+  <script>
+    // 从URL自动填充服务类型
+    window.onload = function() {
+      const url = new URL(window.location.href);
+      const type = url.searchParams.get("type");
+      if (type) {
+        document.getElementById("type").value = type;
+      }
+    };
+
+    // 表单验证
+    function validateForm() {
+      const qq = document.getElementById("qq").value;
+      const wx = document.getElementById("wx").value;
+      const pwd = document.getElementById("pwd").value;
+
+      // QQ号验证
+      if (!/^\d{5,13}$/.test(qq)) {
+        alert("请输入有效的QQ号（5-13位数字）");
+        return false;
+      }
+
+      // 密码不能为空
+      if (pwd.trim() === "") {
+        alert("请输入游戏密码");
+        return false;
+      }
+
+      // 微信号验证（简单判断）
+      if (wx.trim() === "") {
+        alert("请输入微信号，方便我们对接");
+        return false;
+      }
+
+      // 提交成功提示
+      setTimeout(() => {
+        document.getElementById("successTip").style.display = "block";
+        document.getElementById("orderForm").reset();
+      }, 500);
+
+      return true; // 允许提交到FormBold
+    }
+  </script>
 </body>
 </html>
